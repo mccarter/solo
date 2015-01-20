@@ -25,9 +25,9 @@
       $(function(){
 
         //creates new face Model
-        var face = new FaceModel();
+        //var face = new FaceModel();
        
-        //creates an empty faces collection 
+        //instantiates a faces collection;
         var facesCollection = new Faces();
         
         //Populates the faces collection with a faceModel with respective data from the personData array;
@@ -40,19 +40,20 @@
                 'linkedin': person.linkedin, 
                 'github': person.github
             });
-        
+
             facesCollection.add(face);
+            //var faceView = new FaceView(face);
         })
+        
+        //Instantiates and immediately renders a facesView
+        var facesView = new FaceCollectionView({collection: facesCollection});
+       
+        console.log('Array of 4', facesView.render());
+        $('body').append(facesView.render());
+        //var faces = new Backbone.Collection([face1, face2, face3], {model: FaceModel});
+        //var facesView = new FaceCollectionView({collection: faces});
+        
 
-        //sets up app model with the facesCollection
-        var app = new AppModel({facesCollection: facesCollection});
-
-        // build a view for the top level of the whole app
-        var appView = new AppView({model: app});
-
-
-        //renders app view and appends it to the body
-        $('body').append(appView.render());
       });
     </script>
   </body>

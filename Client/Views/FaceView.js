@@ -1,5 +1,6 @@
-//Face View
+//Defines a View Class for Face Models
 var FaceView = Backbone.View.extend({
+  template: _.template('<tr><td>' + 'Hello!'  + '</td></tr>'),
 
 	initialize: function() {
   	this.render();
@@ -7,7 +8,9 @@ var FaceView = Backbone.View.extend({
 
   render: function(){
     //sets the top level view element to a row element
-    $(this.el).html('<tr>' + this.model.get('name') + '</tr>');
+    this.el = this.template();
+    console.log('el of FaceView', this.el); //retuns: <tr>sup Issaq!</tr>
+    return this.el;
   }
 });
 
