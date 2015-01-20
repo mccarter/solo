@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
+     below them until after the scripts load-->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/backbone/backbone-min.js"></script>
+
+    <script src="Client/data/data.js"></script>
+
+    <!-- Model Scripts-->
+    <script src="Client/Models/FaceModel.js"></script>
+    <script src="Client/Models/AppModel.js"></script>
+
+    <script src="Client/Collections/Faces.js"></script>
+
+    <!-- View Scripts-->
+    <script src="Client/Views/AppView.js"></script>
+    <script src="Client/Views/FaceCollectionView.js"></script>
+    <script src="Client/Views/FaceView.js"></script>
+
+   
+    <script>
+      $(function(){
+
+        //creates new face Model
+        var face = new FaceModel();
+       
+        //creates an empty faces collection 
+        var facesCollection = new Faces();
+        
+        //Populates the faces collection with a faceModel with respective data from the personData array;
+        personData.forEach(function(person){
+            var face = new FaceModel({
+                'img': person.img,
+                'name': person.name, 
+                'about': person.about, 
+                'blog': person.blog, 
+                'linkedin': person.linkedin, 
+                'github': person.github
+            });
+        
+            facesCollection.add(face);
+        })
+
+        //sets up app model with the facesCollection
+        var app = new AppModel({facesCollection: facesCollection});
+
+        // build a view for the top level of the whole app
+        var appView = new AppView({model: app});
+
+
+        //renders app view and appends it to the body
+        $('body').append(appView.render());
+      });
+    </script>
+  </body>
+</html>
