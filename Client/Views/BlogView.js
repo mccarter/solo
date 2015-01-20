@@ -1,11 +1,14 @@
-//Defines a View Class for Face Models
-var FaceView = Backbone.View.extend({
+//Defines a View Class for About page
 
-	className: 'face-view',
+
+//list: create a back button contact view
+var AboutView = Backbone.View.extend({
+
+	className: 'aboutview',
 
   template: _.template(
-  	'<tr><td>' +   '<img src="<%=img%>" alt="face" height="110" width="110">' +   '</td></tr>' 
-  	+ '<tr><td> <%= name%></td></tr>'
+  	'<div class = "about-view-header" > <%=name%>' + "'s" +' About Page' +  '</div>' +
+    '<button>Back</button>'
   	),
 
 	initialize: function() {
@@ -14,13 +17,15 @@ var FaceView = Backbone.View.extend({
 	},
 
 	events: {// should the click event on a face be under the 'face' or 'faces' view?????
+  //create a back button?
+
 		"click img" : function() {
 			//console.log('click event is working!');
       // render Contact View for the model that was clicked
-      $('body').children().detach();
-      var contactView = new ContactView({model: this.model});      
-      contactView.render(); //updates the contactView.el property with the 4 div template
-      $('body').append(contactView.$el);  //appends contactView to the body in the dom
+      // $('body').children().detach();
+      // var contactView = new ContactView({model: this.model});      
+      // contactView.render(); //updates the contactView.el property with the 4 div template
+      // $('body').append(contactView.$el);  //appends contactView to the body in the dom
   	}
 	},
 

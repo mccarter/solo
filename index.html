@@ -19,8 +19,9 @@
     <script src="Client/Views/AppView.js"></script>
     <script src="Client/Views/FaceCollectionView.js"></script>
     <script src="Client/Views/FaceView.js"></script>
+    <script src="Client/Views/ContactView.js"></script>
+    <script src="Client/Views/AboutView.js"></script>
 
-   
     <script>
       $(function(){
 
@@ -44,15 +45,13 @@
             facesCollection.add(face);
             //var faceView = new FaceView(face);
         })
-        
+        //////////////////////////////////Instantiate VIEWS//////////////////////////////////////////
         //Instantiates and immediately renders a facesView
         var facesView = new FaceCollectionView({collection: facesCollection});
-       
-        console.log('Array of 4', facesView.render());
-        $('body').append(facesView.render());
-        //var faces = new Backbone.Collection([face1, face2, face3], {model: FaceModel});
-        //var facesView = new FaceCollectionView({collection: faces});
-        
+        $('body').append(facesView.$el);
+
+        //Instantiates a contactView but does not render immediately
+        //var contactView = new ContactView({model: model});
 
       });
     </script>

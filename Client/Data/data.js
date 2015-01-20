@@ -5,7 +5,7 @@ var personData = [
     name: 'Ryan',
     about: "Hello, my name is Ryan and this is my about me page",
     blog: "http://ryanmccarter.com/",
-    linkedin: "www.linkedin.com/in/ryanmccarter",
+    linkedin: "https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile",
     github: "https://github.com/mccarter"
   },
 
@@ -32,7 +32,7 @@ var personData = [
     name: 'Rob',
     about: "Hello, my name is Rob and this is my about me page",
     blog: "http://roberting.io/",
-    linkedin: "www.linkedin.com/pub/roberting",
+    linkedin: "https://www.linkedin.com/in/roberting",
     github: "https://github.com/rmi22186"
   }
 
