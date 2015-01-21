@@ -9,7 +9,7 @@ var ContactView = Backbone.View.extend({
 
   template: _.template(
     '<button class= "back">Back</button>' +
-  	'<div class ="about"> About </div>' +
+  	'<div class ="about"> <a href= "#"> About </a> </div>' +
   	'<div class ="linked-in"> <a href=  <%=linkedin%> >Linkedin</a> </div>' +
   	'<div class = "blog"> <a href=  <%=blog%> >Blog</a>  </div>' +
   	'<div class = "github"> <a href=  <%=github%> >Github</a> </div>'
@@ -41,7 +41,7 @@ var ContactView = Backbone.View.extend({
       //render Contact View for the model that was clicked
       console.log('FaceCollection View trying to render from Contact View');
       $('body').children().detach();
-
+    
         //instantiates a faces collection;
         var facesCollection = new Faces();
         

@@ -7,8 +7,9 @@ var AboutView = Backbone.View.extend({
 	className: 'aboutview',
 
   template: _.template(
-  	'<div class = "about-view-header" > <%=name%>' + "'s" +' About Page' +  '</div>' +
-    '<button class= "back">Back</button>'
+    '<button class = "back-button">Back</button>' +
+    '<div class = "about-view-header" > <p> <%=name%>' + "'s" +' About Page' +  '</p></div>' +
+    '<div class = "about-view-bio" > <p><%=about%>' + '</p></div>' 
   	),
 
 	initialize: function() {
@@ -19,7 +20,7 @@ var AboutView = Backbone.View.extend({
 	events: {// should the click event on a face be under the 'face' or 'faces' view?????
   //create a back button?
 
-		"click .back" : function() {
+		"click .back-button" : function() {
        //render Contact View for the model that was clicked
        console.log('Contact View trying to render from About View')
        $('body').children().detach();

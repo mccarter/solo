@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <body>
+    <head>
+         <!-- CSS Scripts-->
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="Client/app.css">
+
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>
     <script src="bower_components/backbone/backbone-min.js"></script>
 
+    <!-- Memory Data Store-->
     <script src="Client/data/data.js"></script>
 
     <!-- Model Scripts-->
@@ -21,6 +26,14 @@
     <script src="Client/Views/FaceView.js"></script>
     <script src="Client/Views/ContactView.js"></script>
     <script src="Client/Views/AboutView.js"></script>
+    </head>
+
+  <body>
+
+  <header>
+    <img class = "hr-logo" src="https://static.squarespace.com/static/ta/522a22cbe4b04681b0bff826/2104/assets/img/hrhq-logo@2x.png" alt="HR Logo" height="102" width="177">      
+  </header>
+
 
     <script>
       $(function(){
@@ -55,5 +68,9 @@
 
       });
     </script>
+
+   
   </body>
+
+    
 </html>

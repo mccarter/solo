@@ -1,7 +1,7 @@
 //face collection view
 var FaceCollectionView = Backbone.View.extend({
 
-  tagName: 'table',
+  tagName: 'div',
   className: 'faces-view',
  
   initialize: function() {
@@ -14,8 +14,7 @@ var FaceCollectionView = Backbone.View.extend({
   	},
  
   render: function() {
-    this.$el.children().detach();
-  
+    this.$el.children().detach();  
     var mainView = this.collection.models.map(function(faceModel){
     	//creates FaceView for every model in the collection. faceView references the html returned by the FaceView.
     	var faceView = new FaceView({model: faceModel});
@@ -24,7 +23,6 @@ var FaceCollectionView = Backbone.View.extend({
       });
     	this.$el.html(mainView);
   }
- 
 }); 
 
 

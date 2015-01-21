@@ -3,11 +3,14 @@ var FaceView = Backbone.View.extend({
 
 	className: 'face-view',
 
+  tagName: 'div', //delete after fiddling
+
   template: _.template(
-  	'<tr><td>' +   '<img src="<%=img%>" alt="face" height="110" width="110">' +   '</td></tr>' 
-  	+ '<tr><td> <%= name%></td></tr>'
+  	'<img src="<%=img%>" alt="face" height="150" width="150">' +    
+    '<div class ="name-text"><%= name%><div>'
   	),
 
+  
 	initialize: function() {
   	this.render();
   	this.model.on('change', this.render, this); //sets the context of this to the ContactView// renders faceview whenever that faceview model is changed
